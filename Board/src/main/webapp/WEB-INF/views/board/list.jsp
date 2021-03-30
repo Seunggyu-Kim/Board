@@ -70,7 +70,7 @@
                                     
                                 </table>
                                 
-            <!-- Modal 추가 -->
+            <!-- Modal -->
             
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
             	aria-labelledby="myModalLabel" aria-hiden="true">
@@ -89,16 +89,16 @@
             	</div>
             </div>
           </div>
-          
+        
 	<!-- Modal   -->
 
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
 
 	<%@include file="../includes/footer.jsp" %>
+	
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -120,8 +120,6 @@
 				$("#myModal").modal("show");
 				}
 		});
-
-	<!--모달 기능 추가 -->
 	</script>
 
 
