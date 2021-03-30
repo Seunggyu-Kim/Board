@@ -70,6 +70,7 @@
                                     
                                 </table>
                                 
+<<<<<<< HEAD
             <!-- Modal -->
             
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -122,6 +123,18 @@
 		});
 
 	</script>
+=======
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+	<%@include file="../includes/footer.jsp" %>
+
+
+>>>>>>> refs/remotes/origin/main
 
 
 </body>
