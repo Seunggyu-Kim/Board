@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>register</title>
+    <title>Get</title>
 
     <!-- Custom fonts for this template -->
     <link href="/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,14 +31,11 @@
 <body>
 	<%@ include file="../includes/header.jsp" %>
 	
-	
-
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header"> Board Register</h1>
+			<h1 class="page-header"> Board Read Page</h1>
 		</div>
 	</div>
-	
 	
 	<div class="row">
 		<div class="col-lg-12">
@@ -46,23 +43,32 @@
 			
 			<div class="panel-body">
 			
-			<form role="form" action="/board/register" method="post">
 			<div class="form-group">
-				<label>Title</label> <input class="form-control" name="title">
+				<label>Bno</label> <input class="form-control" name='bno'
+				value='<c:out value="${board.bno}"/>' readonly="readonly">
+			</div>
+			
+			<div class="form-group">
+				<label>Title</label> <input class="form-control" name='title'
+				value='<c:out value="${board.title}"/>' readonly="readonly">
 			</div>
 			
 			<div class="form-group">
 				<label>Text area</label> 
-				<textarea class="form-control" rows="3" name="content"></textarea>
+				<textarea class="form-control" rows="3" name='content' 
+					readonly="readonly"><c:out value="${board.content}"/></textarea>
 			</div>
 			
 			<div class="form-group">
-				<label>Writer</label> <input class="form-control" name="writer">
+				<label>Writer</label> <input class="form-control" name='writer'
+				value='<c:out value="${board.writer}"/>' readonly="readonly">
 			</div>
 			
-			<button type="submit" class="btn btn-default">Submit Button</button>
-			<button type="reset" class="btn btn-default">Reset Button</button>
-			</form>
+			<button data-oper='modify' class="btn btn-default"
+				onclick="location.href='/board/modify?bno=<c:out value="${board.bno }"/>'">Modify</button>
+				
+			<button data-oper='list' class="btn btn-info"
+				onclick="location.href='/board/list'">List</button>
 				
 				</div>
 			</div>
