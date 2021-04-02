@@ -42,7 +42,7 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	@GetMapping({"/get", "/modify"})
+	@GetMapping({"/get", "/modify","/remove"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		
 		log.info("/get or modify");
