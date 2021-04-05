@@ -34,7 +34,7 @@ public class BoardControllerTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
-	@Test
+//	@Test
 //	public void testList() throws Exception{
 //		
 //		log.info(
@@ -79,15 +79,27 @@ public class BoardControllerTests {
 //		log.info(resultPage);
 //	}
 	
-	public void testRemove() throws Exception{
+//	public void testRemove() throws Exception{
+//		
+//		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove")
+//				.param("bno","61")
+//			).andReturn().getModelAndView().getViewName();
+//			
+//			log.info(resultPage);
+//
+//	}
+	
+	@Test
+	public void testListPaging() throws Exception{
 		
-		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove")
-				.param("bno","61")
-			).andReturn().getModelAndView().getViewName();
-			
-			log.info(resultPage);
-
+		log.info(mockMvc.perform(
+				MockMvcRequestBuilders.get("/board/list")
+				.param("pageNum", "1")
+				.param("amount", "5"))
+				.andReturn().getModelAndView().getModelMap());
+		
 	}
+	
 	
 	
 	
