@@ -40,10 +40,19 @@
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 =======
+<<<<<<< HEAD
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+=======
 	<!-- Page Heading -->
 	<h1 class="h3 mb-2 text-gray-800">Tables</h1>
 >>>>>>> refs/remotes/origin/main
+>>>>>>> refs/remotes/origin/main
 
+<<<<<<< HEAD
+		<!-- Page Heading -->
+		<h1 class="h3 mb-2 text-gray-800">Tables</h1>
+=======
 <<<<<<< HEAD
 =======
 	<!-- DataTales Example -->
@@ -69,7 +78,32 @@
 							</tr>
 						</thead>
 >>>>>>> refs/remotes/origin/main
+>>>>>>> refs/remotes/origin/main
 
+<<<<<<< HEAD
+		<!-- DataTales Example -->
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<div class="font-weight-bold text-primary">
+					Board List Page
+					<button id="regBtn" type="button"
+						class="btn btn-xs float-right btn-primary">Register New
+						Board</button>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-bordered" id="dataTable" width="100%"
+							cellspacing="0">
+							<thead>
+								<tr>
+									<th>#번호</th>
+									<th>제목</th>
+									<th>작성자</th>
+									<th>작성일</th>
+									<th>수정일</th>
+								</tr>
+							</thead>
+=======
 <<<<<<< HEAD
 		<!-- Page Heading -->
 		<h1 class="h3 mb-2 text-gray-800">Tables</h1>
@@ -169,19 +203,43 @@
 										value="${board.updateDate}" /></td>
 							</tr>
 						</c:forEach>
+>>>>>>> refs/remotes/origin/main
 
-					</table>
-					
-<div class="pull-right">
-	<ul class="pagination">
-	
-		<c:if test="${pageMaker.prev}">
-			<li class="paginate_button previous"><a href="#">previous</a>
-			</li>
-		</c:if>
+							<c:forEach items="${list}" var="board">
+								<tr>
+									<td><c:out value="${board.bno}" /></td>
+									<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'>
+											<c:out value="${board.title}" />
+									</a></td>
+									<td><c:out value="${board.writer}" /></td>
+									<td><fmt:formatDate pattern="yyyy-MM-dd"
+											value="${board.regdate}" /></td>
+									<td><fmt:formatDate pattern="yyyy-MM-dd"
+											value="${board.updateDate}" /></td>
+								</tr>
+							</c:forEach>
+						</table>
 
-</div>
-	
+
+						<div class='pull-right'>
+							<ul class="pagination">
+							
+								<c:if test="${pageMaker.prev}">
+									<li class="paginate_button previous"><a href="#">Previous</a>
+									</li>
+								</c:if>
+
+								<c:forEach var="num" begin="${pageMaker.startPage}"
+									end="${pageMaker.endPage}">
+									<li class="paginate_button"><a href="#">${num}</a></li>
+								</c:forEach>
+
+								<c:if test="${pageMaker.next}">
+									<li class="paginate_button next"><a href="#">Next</a></li>
+								</c:if>
+							</ul>
+						</div>
+
 					<!-- ------------------------------------Modal---------------------------------------------- -->
 
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
